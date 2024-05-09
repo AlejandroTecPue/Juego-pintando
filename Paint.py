@@ -20,7 +20,7 @@ def square(start, end):
         left(90)
 
     end_fill()
-
+#La anterior version estaba mal, debido a que no se importo turtle no detectaba las funciones, asi que se corrigio
 def circle(start, end):
     "Draw circle from start to end."
     turtle.penup() #Se uso turtle, en este caso esta funcion se utiliza para que no se dibuje una linea negra al hacer la circunferencia
