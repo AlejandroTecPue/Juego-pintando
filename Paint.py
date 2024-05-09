@@ -22,7 +22,12 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass # TODO
+    turtle.penup() #Se uso turtle, en este caso esta funcion se utiliza para que no se dibuje una linea negra al hacer la circunferencia
+    turtle.goto(start.x,start.y) #Se fija el origen
+    turtle.pendown() #Se reactiva el trazo para que se trace la circunferencia
+     #Nos ayudara para sacar el radio de la circunferencia
+    distance = ((end.x - start.x) ** 2 + (end.y - start.y) ** 2) ** 0.5
+    turtle.circle(distance) #Se traza el circulo
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -58,6 +63,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('yellow'), 'Y') #Se agrega el nuevo color que es el amarillo ppara que se active con Y
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
