@@ -1,5 +1,6 @@
 from turtle import *
 from freegames import vector
+import turtle #Se importo la libreria para su debido funcionamiento
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -53,7 +54,7 @@ def store(key, value):
     "Store value in state at key."
     state[key] = value
 
-state = {'start': None, 'shape': line}
+state = {'start': None, 'shape': circle} 
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
