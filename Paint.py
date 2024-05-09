@@ -53,7 +53,7 @@ def store(key, value):
     "Store value in state at key."
     state[key] = value
 
-state = {'start': None, 'shape': line}
+state = {'start': None, 'shape': circle}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
