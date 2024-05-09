@@ -1,5 +1,6 @@
 from turtle import *
 from freegames import vector
+import turtle #Se importo la libreria para su debido funcionamiento
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -31,7 +32,21 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    width = end.x - start.x  # Calcula la anchura del rectángulo
+    height = end.y - start.y  # Calcula la altura del rectángulo
+
+    for _ in range(2):
+        forward(width)  # Avanza la longitud del rectángulo
+        left(90)
+        forward(height)  # Avanza la altura del rectángulo
+        left(90)
+
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
@@ -53,7 +68,7 @@ def store(key, value):
     "Store value in state at key."
     state[key] = value
 
-state = {'start': None, 'shape': circle}
+state = {'start': None, 'shape': rectangle} 
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
