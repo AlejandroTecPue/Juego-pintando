@@ -50,7 +50,20 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    # Calcula la longitud de cada lado del triángulo
+    side_length = ((end.y + end.x) - (start.y + start.x)) / 2
+
+    # Dibuja el triángulo
+    for _ in range(3):
+        forward(side_length)
+        left(120)
+
+    end_fill()
 
 def tap(x, y):
     "Store starting point or draw shape."
@@ -68,7 +81,7 @@ def store(key, value):
     "Store value in state at key."
     state[key] = value
 
-state = {'start': None, 'shape': rectangle} 
+state = {'start': None, 'shape': triangle} 
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
